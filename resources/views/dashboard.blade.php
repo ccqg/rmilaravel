@@ -1,8 +1,8 @@
 <!-- dashboard.blade.php -->
 
 @extends('layouts.app')
-
 @section('content')
+
     <div class="container">
        
         <table class="table">
@@ -39,8 +39,7 @@
         <h2>Courses Offered</h2>
             <thead>
                 <tr>
-                    <th>Courese Id</th>
-                    
+                    <th>Course Id</th>
                     <th>Course Title</th>
                     <th>Course Description</th>
                     

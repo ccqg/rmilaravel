@@ -10,7 +10,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css?v=').time()}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css?v=').time()}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
@@ -21,12 +22,14 @@
 </head>
 
 <body class="antialiased" id="indexbody">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-aqua shadow">
         <div class="container">
             <div class="navbar-brand">
                 <h1 class="text-center" id="header">Students Dashboard.</h1>
-
+                
             </div>
+            <div id="clock"></div>
         </div>
     </nav>
     <br> <br> <br>
@@ -54,47 +57,22 @@
            </div>
             </div>
             <div class="col-4">
-                <div class="card" style="width: auto;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
+            <figure class="card "style="width: auto; background-image: url('{{ asset('necro-back.jpg') }}');">
+            <img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('christ.jpg') }}"  alt="Christ" />
+    <figcaption>Christ Charl Gabales</figcaption>
+</figure>
 
-                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('marde.jpg') }}" width="100%" height="200rem"></div>
 
-                            </div>
+            <figure class="card "style="width: auto; background-image: url('{{ asset('necro-back.jpg') }}');">
+            <img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('marde.jpg') }}"  alt="Marde" />
+    <figcaption>Centmarde Campado</figcaption>
+</figure>
 
-                        </div>
-                        <h4 class="text-center">Centmarde J. Campado</h4>
-                    </div>
-                </div>
 
-                <div class="card mt-3" style="width: auto;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
-
-                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('christ.jpg') }}" width="100%" height="200rem"></div>
-
-                            </div>
-
-                        </div>
-                        <h4 class="text-center">Christ Gabales</h4>
-                    </div>
-                </div>
-
-                <div class="card mt-3" style="width: auto;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
-
-                            <div class="mb-5" style="width: 200px; height: 180px;" id="imageContainer">
-                                <div><img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('junkay.jpeg') }}" width="100%" height="200rem"></div>
-
-                            </div>
-
-                        </div>
-                        <h4 class="text-center">Jun Kyle Gulay</h4>
-                    </div>
-                </div>
+            <figure class="card "style="width: auto; background-image: url('{{ asset('necro-back.jpg') }}');">
+            <img class="block my-2 border border-dark border-2 rounded-circle" src="{{ asset('junkay.jpeg') }}"  alt="Kayel" />
+    <figcaption>Jun Kyle Gulay</figcaption>
+</figure>
                 <div class="card mt-3" style="width: auto;">
                     <div class="card-body">
                         <div class="row mb-2">
@@ -115,7 +93,24 @@
             </div>
         </div>
        <br><br><br>
-        <script src="{{ asset('js/app.js') }}"></script>
+       <!--  <script src="{{ asset('js/app.js').time()}}"></script> -->
+       <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            var timeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clock").innerHTML = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
-p{
+p {
     color: #ffffff;
 }
 
 #header {
     position: relative;
-    font-family: 'Sedan SC', serif;
+    font-family: "Sedan SC", serif;
     overflow: hidden;
     white-space: nowrap;
     animation: typing 5s steps(30, end) 1; /* Only typing animation without erasing */
@@ -12,7 +12,7 @@ p{
 
 /* Pseudo-element to represent the typing cursor */
 #header::after {
-    content: '|';
+    content: "|";
     position: absolute;
     top: 0;
     right: 0;
@@ -22,17 +22,18 @@ p{
 /* Keyframes for the typing animation */
 @keyframes typing {
     0% {
-        width: 0; 
-        content: ''; 
+        width: 0;
+        content: "";
     }
     50% {
-        width: 100%; 
+        width: 100%;
     }
 }
 
 /* Keyframes for blinking the cursor */
 @keyframes blink-caret {
-    from, to {
+    from,
+    to {
         opacity: 1;
     }
     50% {
@@ -41,10 +42,10 @@ p{
 }
 
 #indexbody {
-    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-  }
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
 
-  .custom-shape-divider-top-1715081876 {
+.custom-shape-divider-top-1715081876 {
     position: absolute;
     top: 0;
     left: 0;
@@ -64,16 +65,26 @@ p{
     fill: #ffffff;
 }
 
-#title{
+#title {
     color: #ffffff;
-   font-size: 80px;
+    font-size: 80px;
 }
 
-#svg{
+#svg {
     position: relative;
     right: 140px;
 }
 
 #title {
     display: none; /* Hide the element initially */
-  }
+}
+
+#clock {
+    font-size: 3rem;
+    font-weight: 1000;
+    padding: 10px 70px;
+    border-radius: 15px;
+    background-color: #000000;
+    color: aqua;
+    border: 2px solid #ffffff; /* White border */
+}
